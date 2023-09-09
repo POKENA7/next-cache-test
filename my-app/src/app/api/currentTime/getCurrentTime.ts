@@ -2,7 +2,7 @@ import { getBaseUrl } from "../../getBaseUrl";
 
 export default async function getCurrentTime() {
   const res = await fetch(`${getBaseUrl()}/api/currentTime`, {
-    next: { revalidate: 5 },
+    next: { revalidate: 10 },
   });
 
   if (!res.ok) {
