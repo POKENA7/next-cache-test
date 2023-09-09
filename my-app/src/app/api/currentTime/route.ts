@@ -17,3 +17,5 @@ export async function GET(_req: NextRequest) {
 
   return NextResponse.json(data);
 }
+
+export const revalidate = 10;
