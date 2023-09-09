@@ -10,9 +10,10 @@ const getCurrentTime = async () => {
   // let seconds = d.getSeconds().toString().padStart(2, "0");
   // const currentTime = hour + ":" + minute + ":" + seconds;
   // console.log(currentTime);
-  const currentTime = await fetch(
+  const data = await fetch(
     "https://timeapi.io/api/Time/current/zone?timeZone=Europe/Amsterdam"
   );
+  const currentTime = await data.json();
   requestedCount++;
 
   return { currentTime, requestedCount };
