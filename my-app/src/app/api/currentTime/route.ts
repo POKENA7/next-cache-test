@@ -13,7 +13,9 @@ const getCurrentTime = async () => {
   const data = await fetch(
     "https://timeapi.io/api/Time/current/zone?timeZone=Europe/Amsterdam"
   );
-  const currentTime = (await data.json()).dataTime;
+  const jsonData = await data.json();
+  console.log(jsonData.dateTime);
+  const currentTime = jsonData.dateTime;
   requestedCount++;
 
   return { currentTime, requestedCount };
