@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 
-let requestedCount = 0;
-
 const getCurrentTime = async () => {
   // let d = new Date();
 
@@ -16,9 +14,8 @@ const getCurrentTime = async () => {
   const jsonData = await data.json();
   console.log(jsonData.dateTime);
   const currentTime = jsonData.dateTime;
-  requestedCount++;
 
-  return { currentTime, requestedCount };
+  return currentTime;
 };
 
 export async function GET(_req: NextRequest) {

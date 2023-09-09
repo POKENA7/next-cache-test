@@ -9,7 +9,7 @@ export default async function getCurrentTime() {
     throw new Error("Something went wrong!");
   }
 
-  const { currentTime, requestedCount } = await res.json();
+  const currentTime = await res.json();
 
-  return { currentTime, requestedCount };
+  return currentTime;
 }

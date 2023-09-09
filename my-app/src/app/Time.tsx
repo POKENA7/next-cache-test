@@ -1,7 +1,7 @@
 import getCurrentTime from "@/app/api/currentTime/getCurrentTime";
 
 const Time = async () => {
-  const { currentTime, requestedCount } = await getCurrentTime();
+  const currentTime = 100; // await getCurrentTime();
 
   return <div>CurrentTime {currentTime}</div>;
 };
