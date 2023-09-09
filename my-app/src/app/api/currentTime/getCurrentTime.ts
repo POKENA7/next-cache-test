@@ -1,4 +1,3 @@
-import { cache } from "react";
 import { getBaseUrl } from "../../getBaseUrl";
 import "server-only";
 
