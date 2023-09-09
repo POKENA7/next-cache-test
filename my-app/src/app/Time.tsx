@@ -1,13 +1,21 @@
+"use client";
+
 import getCurrentTime from "@/app/api/currentTime/getCurrentTime";
+import { use, useEffect, useState } from "react";
 
-const Time = async () => {
-  const { currentTime, requestedCount } = await getCurrentTime();
+const Time = () => {
+  const [currentTime, setCurrentTime] = useState("");
 
-  return (
-    <div>
-      CurrentTime {currentTime} RequestedCount {requestedCount}
-    </div>
-  );
+  const fetchTime = async () => {
+    const { currentTime, requestedCount } = await getCurrentTime();
+    setCurrentTime(currentTime);
+  };
+
+  useEffect(() => {
+    fetchTime();
+  }, []);
+
+  return <div>CurrentTime {currentTime}</div>;
 };
 
 export default Time;

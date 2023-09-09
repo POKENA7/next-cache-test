@@ -1,5 +1,4 @@
 import { getBaseUrl } from "../../getBaseUrl";
-import "server-only";
 
 export default async function getCurrentTime() {
   const res = await fetch(`${getBaseUrl()}/api/currentTime`, {
