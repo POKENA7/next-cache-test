@@ -22,6 +22,6 @@ export async function GET(_req: NextRequest) {
   return NextResponse.json(data);
 }
 
-export const dynamic = "force-static";
+// export const dynamic = "force-static";
 // export const dynamic = "force-dynamic";
-// export const revalidate = 10;
+export const revalidate = 10;
